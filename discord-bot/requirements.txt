@@ -1,0 +1,5 @@
+discord.py
+unidecode
+flask
+openai
+uvicorn
