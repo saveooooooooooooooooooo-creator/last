@@ -378,12 +378,6 @@ def index():
             logs = "".join(lines)
     return render_template_string(DASH_TEMPLATE, uptime=uptime, warnings=[(k, v) for k, v in w], logs=logs)
 
-# ========== Run web server in background when invoked as service ==========
-def run_flask():
-    # Uvicorn/Flask interplay not necessary; Render runs python and expects a web port.
-    # Flask built-in server is OK for small dashboards; Render will manage the process.
-    app.run(host="0.0.0.0", port=DASHBOARD_PORT)
-
 # ========== Main entry ==========
 if __name__ == "__main__":
     load_warnings()
@@ -393,5 +387,6 @@ if __name__ == "__main__":
     t.start()
     # run bot
     bot.run(TOKEN)
+
 
 
