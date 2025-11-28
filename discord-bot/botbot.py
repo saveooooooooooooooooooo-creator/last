@@ -363,7 +363,6 @@ DASH_TEMPLATE = """
 <pre>{{logs}}</pre>
 """
 
-@app.route("/")
 def index():
     seconds = int(time.time() - bot_start_time)
     hrs = seconds // 3600
@@ -394,4 +393,5 @@ if __name__ == "__main__":
     t.start()
     # run bot
     bot.run(TOKEN)
+
 
