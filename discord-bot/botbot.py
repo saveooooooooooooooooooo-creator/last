@@ -41,10 +41,6 @@ if use_openai:
     import openai
     openai.api_key = OPENAI_API_KEY
 
-# Flask dashboard
-from flask import Flask, jsonify, render_template_string
-app = Flask(__name__)
-
 # ========== Config (replace via environment variables) ==========
 TOKEN = os.getenv("TOKEN") or os.getenv("DISCORD_BOT_TOKEN")  # <<< REPLACE IN ENV
 MOD_LOG_CHANNEL = os.getenv("MOD_LOG_CHANNEL", "mod-logs")
@@ -398,3 +394,4 @@ if __name__ == "__main__":
     t.start()
     # run bot
     bot.run(TOKEN)
+
