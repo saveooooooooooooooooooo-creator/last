@@ -381,12 +381,9 @@ def index():
 # ========== Main entry ==========
 if __name__ == "__main__":
     load_warnings()
-    # start flask in background
-    from threading import Thread
-    t = Thread(target=run_flask, daemon=True)
-    t.start()
     # run bot
     bot.run(TOKEN)
+
 
 
 
